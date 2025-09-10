@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PÁGINA DE EXEMPLOS DE APLICAÇÃO WEB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Para alinhar o conteúdo e o botão */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            margin-bottom: 20px; /* Espaço entre o container e o botão de voltar */
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: calc(100% - 22px); /* Ajusta a largura para padding e borda */
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+        pre {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .back-button-container {
+            margin-top: 20px;
+        }
+        .back-button {
+            padding: 10px 20px;
+            background-color: #6c757d; /* Cor cinza para o botão de voltar */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; /* Remove sublinhado padrão do link */
+            display: inline-block; /* Permite aplicar padding e width */
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PÁGINA DE EXEMPLOS DE APLICAÇÃO WEB</h1>
+
+        ---
+
+        <h2>Programa Simples de Cálculo de IMC com HTML e JavaScript</h2>
+        <p>Neste exemplo, o HTML fornecerá a estrutura para os campos de entrada de peso e altura, e um botão para iniciar o cálculo. O JavaScript será responsável por pegar esses valores, calcular o IMC e exibir o resultado na página.</p>
+
+        <h3>Calculadora de IMC:</h3>
+        <div class="imc-calculator">
+            <div>
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" placeholder="Ex: 70.5">
+            </div>
+            <div>
+                <label for="altura">Altura (m):</label>
+                <input type="number" id="altura" placeholder="Ex: 1.75">
+            </div>
+            <button onclick="calcularIMC()">Calcular IMC</button>
+            <div id="resultado"></div>
+        </div>
+
+        <h3>Explicação do Código:</h3>
+        <h4>HTML (`imc.html` - o código da calculadora):</h4>
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Calculadora de IMC&lt;/title&gt;
+    &lt;style&gt;
+        /* Estilos CSS omitidos para brevidade neste exemplo */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Calculadora de IMC&lt;/h1&gt;
+        &lt;div&gt;
+            &lt;label for="peso"&gt;Peso (kg):&lt;/label&gt;
+            &lt;input type="number" id="peso" placeholder="Ex: 70.5"&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for="altura"&gt;Altura (m):&lt;/label&gt;
+            &lt;input type="number" id="altura" placeholder="Ex: 1.75"&gt;
+        &lt;/div&gt;
+        &lt;button onclick="calcularIMC()"&gt;Calcular IMC&lt;/button&gt;
+        &lt;div id="resultado"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+ 
+    &lt;script&gt;
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById('peso').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+            const resultadoDiv = document.getElementById('resultado');
+ 
+            if (isNaN(peso) || isNaN(altura) || peso &lt;= 0 || altura &lt;= 0) {
+                resultadoDiv.textContent = "Por favor, insira peso e altura válidos.";
+                return;
+            }
+ 
+            const imc = peso / (altura * altura);
+            resultadoDiv.textContent = `Seu IMC é: ${imc.toFixed(2)}`;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h4>JavaScript (`&lt;script&gt;`):</h4>
+        <ul>
+            <li>A função <code>calcularIMC()</code> é definida e executada quando o botão é clicado.</li>
+            <li>Ela obtém os valores de **peso** e **altura** dos campos de entrada, convertendo-os para números.</li>
+            <li>Realiza uma **validação** para garantir que os valores são numéricos e positivos.</li>
+            <li>Calcula o **IMC** usando a fórmula `peso / (altura * altura)`.</li>
+            <li>Exibe o resultado formatado no elemento com `id="resultado"`.</li>
+        </ul>
+
+        <h3>Como Usar a Calculadora:</h3>
+        <ol>
+            <li>Digite seu peso (em quilogramas) no campo "Peso (kg)".</li>
+            <li>Digite sua altura (em metros) no campo "Altura (m)".</li>
+            <li>Clique no botão "Calcular IMC".</li>
+            <li>O resultado do seu IMC será exibido abaixo do botão.</li>
+        </ol>
+
+        <h4>Demonstração da Interação:</h4>
+        <p>Este programa demonstra como o HTML cria a interface do usuário (os campos de entrada e o botão), e o JavaScript adiciona a interatividade e a lógica (pegar os valores, calcular o IMC e atualizar a página com o resultado) sem a necessidade de enviar informações para um servidor (backend) neste caso. Tudo acontece no navegador do usuário (frontend).</p>
+        <p class="note">A diferença entre as duas aplicações é que o JavaScript não precisa de outro componente para rodar junto ao HTML, tornando a programação mais "fácil" devido a não precisar de outra ferramenta.</p>
+    </div>
+
+    <div class="back-button-container">
+        <a href="python_html_juntos.html" class="back-button">Voltar para a Página Principal</a>
+    </div>
+</body>
+</html>

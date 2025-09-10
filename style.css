@@ -1,0 +1,70 @@
+/* Estilos para o corpo da página */
+body {
+    /* Cor de fundo alterada para verde cinza claro */
+    background: #e0e7e4; /* Um tom de verde acinzentado claro */
+    font: normal 15pt Arial; /* Fonte padrão para o texto */
+    margin: 0; /* Remove margem padrão do corpo */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    flex-direction: column; /* Organiza os itens em coluna */
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da viewport */
+}
+
+/* Estilos para o cabeçalho */
+header {
+    color: white; /* Cor do texto do cabeçalho */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 20px 0; /* Espaçamento interno superior e inferior */
+}
+
+/* Estilos para a seção principal */
+section {
+    background: white; /* Cor de fundo da seção */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+    width: 90%; /* Largura da seção (ajustável para telas menores) */
+    max-width: 500px; /* Largura máxima para telas maiores */
+    margin: 20px auto; /* Centraliza a seção horizontalmente e adiciona margem vertical */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.329); /* Sombra para dar profundidade */
+    flex-grow: 1; /* Permite que a seção cresça para ocupar espaço disponível */
+}
+
+/* Estilos para o rodapé */
+footer {
+    color: white; /* Cor do texto do rodapé */
+    text-align: center; /* Alinha o texto ao centro */
+    font-style: italic; /* Estilo itálico para o texto */
+    padding: 10px 0; /* Espaçamento interno superior e inferior */
+}
+
+/* Estilos para os inputs de número */
+input[type="number"] {
+    padding: 8px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-right: 5px; /* Margem à direita */
+}
+
+/* Estilos para o botão */
+input[type="button"] {
+    background-color: #4CAF50; /* Cor de fundo do botão (verde) */
+    color: white; /* Cor do texto do botão */
+    padding: 10px 15px; /* Espaçamento interno */
+    border: none; /* Remove a borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    font-size: 16pt; /* Tamanho da fonte */
+    transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+input[type="button"]:hover {
+    background-color: #45a049; /* Escurece o verde ao passar o mouse */
+}
+
+/* Estilos para o parágrafo de resultado */
+#result {
+    margin-top: 20px; /* Margem superior para separar do formulário */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px dashed #ccc; /* Borda tracejada */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #f9f9f9; /* Cor de fundo levemente diferente */
+}
